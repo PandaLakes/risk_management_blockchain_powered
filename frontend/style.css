@@ -1,0 +1,374 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Exo 2', sans-serif;
+    background: url('blockchain powerd.png') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Header Styling */
+header {
+    padding: 20px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+header h1 {
+    font-family: 'Organic', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #00c8d7; /* Cyan for futuristic feel */
+    letter-spacing: 2px;
+}
+
+section h2 {
+    color: #ffffff; /* Bright white for contrast */
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Sidebar Styling */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: rgba(20, 20, 40, 0.9); /* Darker blue for depth */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    transition: left 0.3s ease-in-out;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    visibility: hidden;
+}
+
+#sidebar.open {
+    left: 0;
+    visibility: visible;
+}
+
+#menuIcon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    font-size: 2rem;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: none;
+}
+
+#menuIcon.visible {
+    display: block;
+}
+
+#sidebar a {
+    color: #ffffff; /* Match header and buttons */
+    font-size: 1.11rem;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-align: left;
+}
+
+#sidebar a:hover {
+    background: rgba(0, 200, 255, 0.2);
+    color: #ffffff;
+}
+
+#sidebar a:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+/* Hamburger Menu Icon */
+#menuIcon:hover {
+    transform: scale(1.2);
+}
+
+/* Dark Overlay */
+#darkOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    display: none;
+}
+
+/* Main Content Styling */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    backdrop-filter: blur(8px);
+}
+
+/* Connect Wallet Section */
+#connectMetamask {
+    background-color: rgba(30, 40, 60, 0.8); /* Dark bluish background */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+
+#connectWalletMessage {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #cccccc;
+}
+
+#connectWallet {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    background: #00c8d7; /* Cyan for futuristic touch */
+    color: #000;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#connectWallet:hover {
+    transform: translateY(-2px);
+    background: #0099aa; /* Slightly darker cyan */
+}
+
+/* Input and Button Styling */
+input {
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 1rem;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+button {
+    padding: 15px 30px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #00c8d7;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background: #0099aa;
+}
+
+/* Section Styling */
+section {
+    display: none;
+    margin-bottom: 30px;
+    background: rgba(20, 30, 50, 0.95); /* Deep blue-gray */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+}
+
+section.active {
+    display: block;
+}
+
+#riskResult {
+    color: #e0e0e0; /* Light gray for readability */
+    font-size: 1.2rem; /* Adjust text size */
+    font-weight: bold;
+}
+
+#coverageRatioResult {
+    color: #ffffff; /* Bright white for contrast */
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#infoResult {
+    color: #e0e0e0; /* Light gray for clarity */
+    font-size: 1rem;
+    line-height: 1.5; /* Improves readability */
+}
+
+
+/* Table Styling */
+/* Table Styling */
+table {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: rgba(20, 30, 50, 0.95); /* Match section background */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Table Header */
+thead {
+    background: linear-gradient(90deg, #0099aa, #00c8d7); /* Gradient for modern look */
+}
+
+thead th {
+    font-size: 1.2rem;
+    color: #ffffff; /* White text for clarity */
+    text-transform: uppercase;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+}
+
+/* Table Rows */
+tbody tr {
+    transition: background 0.3s ease;
+}
+
+tbody tr:nth-child(even) {
+    background: rgba(30, 40, 60, 0.8); /* Slightly darker for alternate rows */
+}
+
+tbody tr:nth-child(odd) {
+    background: rgba(20, 30, 50, 0.95); /* Match table background */
+}
+
+tbody tr:hover {
+    background: rgba(0, 200, 255, 0.15); /* Highlight on hover */
+    transform: scale(1.01); /* Slight zoom effect */
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Table Data */
+td {
+    font-size: 1rem;
+    color: #e0e0e0; /* Light gray for better readability */
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+    word-break: break-word;
+}
+
+/* Last Row Border Fix */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Table Borders */
+table {
+    border: 1px solid rgba(0, 200, 255, 0.3); /* Subtle border to frame the table */
+}
+
+/* Table Header Shadow */
+thead th {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Subtle shadow for depth */
+}
+
+/* Scrollable Table for Small Screens */
+table {
+    display: block;
+    overflow-x: auto;
+    border-spacing: 0;
+    margin-top: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: #00c8d7 rgba(20, 30, 50, 0.9);
+}
+
+/* Custom Scrollbar */
+table::-webkit-scrollbar {
+    height: 8px;
+}
+
+table::-webkit-scrollbar-thumb {
+    background: #00c8d7;
+    border-radius: 8px;
+}
+
+table::-webkit-scrollbar-track {
+    background: rgba(20, 30, 50, 0.95);
+}
+
+/* Prevent wrapping for specific table columns */
+td, th {
+    white-space: nowrap; /* Ensures text stays on one line */
+    overflow: hidden; /* Prevents content overflow */
+    /*text-overflow: ellipsis; /* Adds ellipsis if the content is too long */
+}
+
+td:nth-child(2), td:nth-child(3), th:nth-child(2), th:nth-child(3) {
+    max-width: 200px; /* Adjust this width as needed */
+}
+
+/* Optional: Adjust table layout for readability */
+table {
+    table-layout: auto; /* Default layout for dynamic column adjustment */
+    width: 100%; /* Ensure table fits container */
+    border-collapse: collapse; /* Consistent borders */
+}
+
+
+.adminRow input {
+    flex: 1; /* Ensures input fills available space */
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.adminRow button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background: #00c8d7;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.adminRow {
+    display: flex;
+    justify-content: space-between; /* Ensures alignment of input and button */
+    align-items: center; /* Vertically aligns items */
+    gap: 10px; /* Spacing between input and button */
+    width: 100%; /* Ensure consistent width for all rows */
+}

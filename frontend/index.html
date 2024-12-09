@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Management DApp</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <div id="connectMetamask">
+            <p id="connectWalletMessage">Please connect your MetaMask wallet</p>
+            <button id="connectWallet">Connect Wallet</button>
+        </div>
+    </header>
+
+    <div id="menuIcon" style="display: none;">☰</div>
+    <div id="sidebar">
+        <a></a>
+        <a href="#" id="addCounterpartyLink">Add Counterparty</a>
+        <a href="#" id="updateExposureLink">Update Exposure</a>
+        <a href="#" id="updateCollateralLink">Update Collateral</a>
+        <a href="#" id="calculateRiskLink">Calculate Risk</a>
+        <a href="#" id="calculateCoverageLink">Calculate Coverage Ratio</a>
+        <a href="#" id="performTransactionLink">Perform Transaction</a>
+        <a href="#" id="showInfoLink">Show Counterparty Info</a>
+    </div>
+    <div id="darkOverlay"></div>
+
+    <main id="appContent" style="display: none;">
+        
+        <!-- Add Counterparty Section -->
+        <section id="addCounterparty" style="display: none;">
+            <h2>Add Counterparty</h2>
+            <input type="text" id="counterpartyAddress" placeholder="Counterparty Address">
+            <input type="number" id="creditScore" placeholder="Credit Score">
+            <input type="number" id="exposureLimit" placeholder="Exposure Limit">
+            <button id="addCounterpartyBtn">Add Counterparty</button>
+        </section>
+
+        <!-- Update Exposure Section -->
+        <section id="updateExposure" style="display: none;">
+            <h2>Update Exposure</h2>
+            <input type="text" id="exposureCounterpartyAddress" placeholder="Counterparty Address">
+            <input type="number" id="newExposure" placeholder="New Exposure">
+            <button id="updateExposureBtn">Update Exposure</button>
+        </section>
+
+        <!-- Update Collateral Section -->
+        <section id="updateCollateral" style="display: none;">
+            <h2>Update Collateral</h2>
+            <input type="text" id="collateralAddress" placeholder="Counterparty Address">
+            <input type="number" id="newCollateral" placeholder="New Collateral">
+            <button id="updateCollateralBtn">Update Collateral</button>
+        </section>
+
+        <!-- Calculate Risk Section -->
+        <section id="calculateRisk" style="display: none;">
+            <h2>Calculate Risk</h2>
+            <input type="text" id="riskAddress" placeholder="Counterparty Address">
+            <button id="calculateRiskBtn">Calculate Risk</button>
+            <p id="riskResult"></p>
+        </section>
+
+        <!-- Calculate Coverage Ratio Section -->
+        <section id="calculateCoverageRatio" style="display: none;">
+            <h2>Calculate Coverage Ratio</h2>
+            <input type="text" id="coverageRatioAddress" placeholder="Counterparty Address">
+            <button id="calculateCoverageBtn">Calculate Coverage Ratio</button>
+            <p id="coverageRatioResult"></p>
+        </section>
+
+        <!-- Show Counterparty Info Section -->
+        <section id="showInfo" style="display: none;">
+            <h2>Show Counterparty Info</h2>
+            <input type="text" id="infoAddress" placeholder="Counterparty Address">
+            <button id="showInfoBtn">Show Info</button>
+            <p id="infoResult"></p>
+        </section>
+
+        <!-- Perform Transaction Section -->
+        <section id="performTransaction" style="display: none;">
+            <h2>Perform Transaction</h2>
+            <input type="text" id="transactionToAddress" placeholder="To Address">
+            <input type="number" id="transactionAmount" placeholder="Amount (positive/negative)">
+            <button id="performTransactionBtn">Perform Transaction</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
